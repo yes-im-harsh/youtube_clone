@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
+
 import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
 import VideoDetail from "./components/VideoDetail";
 import ChannelDetail from "./components/ChannelDetail";
 import SearchDetail from "./components/SearchDetail";
-import Feed from "./components/Feed";
 
-const App = () => {
+const App = () => (
   <BrowserRouter>
     <Box sx={{ backgroundColor: "#000" }}>
       <Navbar />
@@ -17,7 +18,7 @@ const App = () => {
         <Route path="/search/:id" element={<SearchDetail />} />
       </Routes>
     </Box>
-  </BrowserRouter>;
-};
+  </BrowserRouter>
+);
 
 export default App;
