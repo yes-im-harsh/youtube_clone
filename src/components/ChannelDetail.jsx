@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
+import ChannelCard from "./ChannelCard";
 
 const ChannelDetail = () => {
   const [channelDetails, setChannelDetails] = useState(null);
@@ -19,7 +21,23 @@ const ChannelDetail = () => {
     );
   }, [id]);
 
-  return <div>{id}</div>;
+  return (
+    <div>
+      <Box minHeight="95vh">
+        <Box>
+          <div
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)",
+              height: "300px",
+              zIndex: 10,
+            }}
+          />
+          <ChannelCard channelDetail={channelDetails} marginTop="-110px" />
+        </Box>
+      </Box>
+    </div>
+  );
 };
 
 export default ChannelDetail;
