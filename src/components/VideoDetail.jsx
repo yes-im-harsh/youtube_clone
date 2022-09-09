@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
-import { Check, CheckCircle } from "@mui/icons-material";
+import {  CheckCircle } from "@mui/icons-material";
 
 import { Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
@@ -38,13 +38,13 @@ const VideoDetail = () => {
               className="react-player"
               controls
             />
-            <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+            <Typography color="#fff" variant="h6" fontWeight="bold" p={0.8}>
               {title}
             </Typography>
             <Stack
               direction="row"
               justifyContent="space-between"
-              py={1}
+              py={0.8}
               px={2}
               sx={{ color: "#fff" }}
             >
@@ -70,7 +70,12 @@ const VideoDetail = () => {
             </Stack>
           </Box>
         </Box>
-        <Box px={2} py={{md:1, xs: 5}} justifyContent="center" alignItems="center">
+        <Box
+          px={2}
+          py={{ md: 1, xs: 5 }}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Videos videos={videos} direction="column" />
         </Box>
       </Stack>
