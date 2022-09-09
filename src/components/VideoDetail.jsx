@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+import { Check, CheckCircle } from "@mui/icons-material";
 
 import { Video } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
@@ -17,6 +17,13 @@ const VideoDetail = () => {
     );
   }, [id]);
 
+  if (!videoDetail?.snippet) return "Loading...";
+
+  const {
+    snippet: { title, channelId, channelTitle },
+    statistics: { viewCount, likeCount },
+  } = videoDetail;
+
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
@@ -27,7 +34,28 @@ const VideoDetail = () => {
               className="react-player"
               controls
             />
-            
+            <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+              {title}
+            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              py={1}
+              px={2}
+              sx={{ color: "#fff" }}
+            >
+              <Link to={`channel/${channelId}`}>
+                <Typography
+                  variant={{ sm: "subtitle1", md: "h6" }}
+                  color="#fff"
+                >
+                  {channelTitle}
+                  <CheckCircle
+                    sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
+                  />
+                </Typography>
+              </Link>
+            </Stack>
           </Box>
         </Box>
       </Stack>
