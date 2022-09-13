@@ -1,6 +1,14 @@
 # YouTube Clone App
 
-Link (http://youtube-clone-swart.vercel.app/).
+Visit (http://youtube-clone-swart.vercel.app/).
+
+## Images
+
+<img src="https://i.ibb.co/L8cbxVd/Youtube-Clone.jpg" alt="Alt text" title="Optional title ">
+
+
+<img src="https://i.ibb.co/8XQRr42/Youtube-Clone-2.jpg" alt="Alt text" title="Optional title">
+
 
 ## Available Scripts
 
